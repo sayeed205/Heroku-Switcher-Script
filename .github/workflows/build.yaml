@@ -14,7 +14,11 @@ jobs:
           node-version: 18.x
       - name: Install dependencies
         run: npm install
-      - name: Start Heroku Switcher Script
-        run: npm run start
+      - name: create env file
         env:
           HEROKU_DATA_URL: ${{ secrets.HEROKU_DATA_URL }} }}
+        run: |
+          touch .env
+          echo HEROKU_DATA_URL=${{ secrets.HEROKU_DATA_URL }} >> .env
+      - name: Start Heroku Switcher Script
+        run: npm run start
