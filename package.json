@@ -1,0 +1,15 @@
+{
+  "name": "heroku-switcher-script",
+  "version": "1.0.0",
+  "description": "Indivisual script for Heroku Switcher",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "author": "Sayed Ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "heroku-client": "^3.1.0"
+  }
+}

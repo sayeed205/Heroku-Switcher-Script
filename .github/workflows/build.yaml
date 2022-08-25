@@ -1,0 +1,20 @@
+name: Heroku Switcher Script
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+    - name: use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+    - name: Install dependencies
+      run: npm install
+    - name: Start Heroku Switcher Script
+      run: npm run start
+      env:
+        HEROKU_DATA_URL: ${{ secrets.HEROKU_DATA_URL }} }}
